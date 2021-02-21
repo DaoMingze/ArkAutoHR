@@ -1,4 +1,5 @@
 import os
+from os import path
 import time
 from cnocr import CnOcr
 from cv2 import imread
@@ -6,10 +7,10 @@ import numpy as np
 from itertools import chain, combinations
 import re
 import json
+import sys
 # 模拟器device_name，使用adb devices查看
-device_name = '127.0.0.1:62026'
-# 公招次数
-num = 2
+device_name = input("请输入模拟器端口，可使用adb devices查看：\n")
+num = int(input("请输入公招的次数：\n"))
 '''
 模拟器分辨率默认为960*540，若为其他分辨率，调整factor
 如分辨率为1280*720，则factor=1280/960
@@ -25,7 +26,9 @@ factor = img.shape[1] / 960
 
 ocr = CnOcr()
 
-with open('干员信息.json', 'r', encoding='utf-8') as file:
+dict_path = sys.path[0] + '/' +'干员信息.json'
+
+with open(dict_path, 'r', encoding='utf-8') as file:
     op_dict = json.loads(file.read())
 tag_dict = {}
 reg_dict = {}
