@@ -9,7 +9,8 @@ import re
 import json
 import sys
 # 模拟器device_name，使用adb devices查看
-device_name = input("请输入模拟器端口，可使用adb devices查看：\n")
+device_name = '127.0.0.1:7555'
+# input("请输入模拟器端口，可使用adb devices查看：\n")
 num = int(input("请输入公招的次数：\n"))
 '''
 模拟器分辨率默认为960*540，若为其他分辨率，调整factor
@@ -188,7 +189,7 @@ def gongzhao(num, start=0):
         print('第%d抽' % k)
         click(pos_dict['新建'], 1)
 #         click_incre()
-        for i in range(8):
+        for i in range(7):
             click(pos_dict['增加时长'], 0)
         screenshot('tag_%d.png' % k)
         tag_list, tags_choosen, click_pos = recognize_tag(load_image('tag_%d.png' % k))
