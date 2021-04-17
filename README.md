@@ -1,4 +1,4 @@
-# ArkAutoHR
+# ArkAuto
 
 明日方舟自动公开招募，使用adb控制安卓模拟器，实现公开招募的全自动脚本，使用python3编写
 
@@ -7,6 +7,10 @@ forked from [shuangluoxss/ArkAutoHR](https://github.com/shuangluoxss/ArkAutoHR)
 为其增添一些便利性而非实质功能性的更新
 
 ## 更新说明
+
+### 2021-04-17
+
+1. 增加`自动代理点击`脚本和`自动任务奖励领取`脚本。
 
 ### 2021-02-23
 
