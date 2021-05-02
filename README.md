@@ -1,6 +1,6 @@
-# ArkAuto
+# ArkAutoHR
 
-基于明日方舟自动公开招募脚本思路，使用adb控制安卓模拟器，实现通过输入控制代替操作的python脚本。使用python3编写。
+明日方舟自动公开招募，使用adb控制安卓模拟器，实现公开招募的全自动脚本，使用python3编写
 
 forked from [shuangluoxss/ArkAutoHR](https://github.com/shuangluoxss/ArkAutoHR)
 
@@ -8,20 +8,23 @@ forked from [shuangluoxss/ArkAutoHR](https://github.com/shuangluoxss/ArkAutoHR)
 
 ## 更新说明
 
-### 2021-04-17
+### 2021-05-02
 
-1. 增加`自动代理点击`脚本和`自动任务奖励领取`脚本。
+- 更新PlatformTools为31.0.2（2021 年 4 月）
+- 通过监测调用WiFi日志，自动计算代理作战时间，修改`auto_agency`，已知bug是日志的清理问题，偷懒没做了。
+- 任务奖励领取脚本`task_awards`，已知bug为由时间间隔过近导致的误报。
+- 计划由设备检查与游戏启动（已完成）、基建与信赖自动完成（未开始）、自动代理作战（已完成，仅测试B服）、干员自动招募（forked from [shuangluoxss/ArkAutoHR](https://github.com/shuangluoxss/ArkAutoHR)，计划更换OCR引擎）、任务奖励领取（已完成）五大部分（各部分衔接，未开始）组成明日方舟自动化工具箱。
 
 ### 2021-02-23
 
-1. 根据[ngc7331](https://github.com/ngc7331/ArkAutoHR)的向[shuangluoxss/ArkAutoHR](https://github.com/shuangluoxss/ArkAutoHR)的pull request，换用其修改的`auto_hr.py`，修改`README.md`，增加`requirements.txt`（脚本依赖库及其版本限定）
+- 根据[ngc7331](https://github.com/ngc7331/ArkAutoHR)的向[shuangluoxss/ArkAutoHR](https://github.com/shuangluoxss/ArkAutoHR)的pull request，换用其修改的`auto_hr.py`，修改`README.md`，增加`requirements.txt`（脚本依赖库及其版本限定）
 
 ### 2021-02-21
 
-1. 增加`platform-tools`压缩包，提供Android SDK Platform Tools 30.0.5。
-2. 增加`write_in_path.py`，自动将`adb.exe`所在文件夹加入环境变量。
-3. 在`auto_hr.py`中增添输入设备编号、公招次数代码。
-4. 增加一个批处理文件`set_port_to_MuMu.bat`，为MuMu模拟器（1.1.1.4_nochannel_zh-Hans）64位添加7775端口。
+- 增加`platform-tools`压缩包，提供Android SDK Platform Tools 30.0.5。
+- 增加`write_in_path.py`，自动将`adb.exe`所在文件夹加入环境变量。
+- 在`auto_hr.py`中增添输入设备编号、公招次数代码。
+- 增加一个批处理文件`set_port_to_MuMu.bat`，为MuMu模拟器（1.1.1.4_nochannel_zh-Hans）64位添加7775端口。
 
 ## 安装说明
 
@@ -40,6 +43,8 @@ python[官方下载地址](https://www.python.org/downloads/)
 如果安装完成后运行时出现`RuntimeError: Cannot find the MXNet library.`报错，并且使用的版本为python3.8则请尝试使用python3.6。[参考](https://github.com/apache/incubator-mxnet/issues/17719)
 
 3. 运行`platform-tools`文件夹中的`write_in_path.py`，将adb加入环境变量。此时需注销或重启，以完成注册表写入。可换用手动方式添加。adb的手动安装请参考[百度经验](https://jingyan.baidu.com/article/22fe7cedf67e353002617f25.html)
+
+PlatformTools[下载链接](https://developer.android.google.cn/studio/releases/platform-tools)
 
 ## 展示
 
